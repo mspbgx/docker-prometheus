@@ -1,0 +1,10 @@
+groups:
+- name: develop
+  rules:
+  - alert: SiteDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      description: "stuff's happening with {{ $labels.service }}"
